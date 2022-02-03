@@ -1,5 +1,6 @@
 package ПотокиВводаВывода.Загрузка;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -8,10 +9,12 @@ import java.util.zip.ZipInputStream;
 
 public class Main {
 
+    public static String prefix = "d:" + File.separator + "Games" + File.separator + "savegames" + File.separator;
+
     public static void main(String[] args) {
 
-        openZip("d:\\Games\\savegames\\gameProgress.zip", "d:\\Games\\savegames\\");
-        System.out.println(openProgress("d:\\Games\\savegames\\2 packed_save.dat"));
+        openZip(prefix + "gameProgress.zip", prefix);
+        System.out.println(openProgress(prefix + "2 packed_save.dat"));
     }
 
     public static void openZip(String zipFile, String unzipFilesFolder) {
